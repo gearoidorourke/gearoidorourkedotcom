@@ -1,0 +1,204 @@
+---
+---
+
+// MIXINS
+
+// Type
+@mixin sans {font-family: "National 2 Test", sans-serif;}
+@mixin serif {font-family: "Tiempos Text Test", serif;}
+@mixin headline {font-family: "Tiempos Headline Test", serif;}
+
+// Colors
+@mixin d-100 {color: hsla(234, 44%, 8%, 1);}
+@mixin d-90 {color: hsla(234, 44%, 8%, .9);}
+@mixin d-60 {color: hsla(234, 44%, 8%, .6);}
+$d-30: hsla(234, 44%, 8%, .3);
+$d-10: hsla(234, 44%, 8%, .1);
+@mixin link {color: hsla(215, 79, 52, 1);}
+
+// Backgrounds
+@mixin tinted {background: hsla(36, 20, 98, 1);}
+@mixin dark {background: hsla(0, 0, 7, 1);}
+
+
+// ———————————————————
+// TYPE
+// ———————————————————
+
+body {
+	@include sans;
+	@include d-90;
+	font-size: 16px;
+	line-height: 1.625rem;
+	font-weight: 400;
+  }
+  
+  
+h1, h2, h3, h4, h5, h6, p, ul, ol {
+	margin: 0;
+	padding: 0;	
+	font-weight: 400;
+}
+
+h1 {
+	@include headline;
+		font-weight: 600;
+}
+
+.x-small {
+	font-size: 0.875em;
+}
+
+.small {
+	font-size: 1rem;
+}
+
+.medium {
+	font-size: 1.125rem;
+}
+
+.large {
+	font-size: 1.5rem;
+	line-height: 2rem;
+}
+
+
+.sidecar {
+	@include d-60;	
+}
+
+.meta {
+	
+}
+
+a {
+	@include link;
+	text-decoration: none;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+// ——————————————————— 
+// LAYOUT
+// ———————————————————
+
+body, html {
+	padding: 0;
+	margin: 0;
+  }
+  
+.site-section {
+	padding: 5rem 3rem;
+// 	background: red;
+}
+
+.tinted {
+	@include tinted;
+}
+
+
+// ———————————————————
+// GRID
+// ———————————————————
+  
+.grid-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-gap: 1.5rem;
+// 	max-width: 1280px;
+	margin: 0 auto;
+// 	background: pink;
+}
+
+$sizes: 1,2,3,4,5,6,7,8,9,10,11,12;
+
+@each $size in $sizes {
+  .g-s-#{$size} {
+	grid-column: span $size;
+// 	background: #ffe7e7;
+	}
+}
+
+.offset-2 {
+	grid-column: 3 / span 8
+}
+
+// ———————————————————
+// MODULES
+// ———————————————————
+
+// Introduction
+.introduction {
+	padding: 3rem 3rem 1rem 3rem;
+	
+	h1 {
+		
+	}
+}
+
+// global-nav
+
+.global-nav {
+	padding: 3rem;
+	
+	a {
+		color: $d-30;
+	}
+}
+
+// Career list
+.career-list {
+	list-style: none;
+
+	li {
+		margin-bottom: 0.125rem;
+	}
+	
+	.year {
+		color: $d-30;
+	}
+
+}
+
+// Article list
+.list-push {
+	padding-bottom: 5rem;
+}
+
+.article-list {
+	margin-bottom: 7rem;
+	ol {
+		list-style: none;
+		border-top: 1px solid $d-10;
+		margin-top: -1.5rem;
+	}
+	li {
+		border-bottom: 1px solid $d-10;
+		
+	}
+	article {
+		padding: 1.5rem 0;
+		
+		
+	}
+	h1 {
+		@include headline;
+		font-weight: 600;
+		margin-bottom: 0.25rem;
+	}
+	.meta {
+		color: $d-30;
+		span {
+		display: inline-block;
+		margin-right: 3rem;
+		}
+	}
+}
+
+
+
+
+
+
+
