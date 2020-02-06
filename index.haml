@@ -1,5 +1,5 @@
 ---
-title: Story Time
+title: Gearoid O'Rourke
 ---
 %html
 	%head
@@ -10,7 +10,7 @@ title: Story Time
 			%nav.site-section.global-nav
 				.grid-container
 					.g-s-2
-						%p.small.meta Gearoid O'Rourke
+						%a.logo{:title => :"Profile", :href=> :"/profile"} Gearoid O'Rourke
 					.g-s-1
 						%a{:title => :"Profile", :href=> :"/profile"} Profile
 					.g-s-1
@@ -58,25 +58,28 @@ title: Story Time
 							%ol
 								%li
 									%article
-										%h1.medium Comissioning an illustrator for your brand
-										%p.meta.x-small  
-											%span 14 February, 2020
-											%span #brand
-											%span 723 words	 	
+										%a{:title => :"Writing", :href=> :"/writing"}
+											%h1.medium Comissioning an illustrator for your brand
+											%p.meta.x-small  
+												%span 14 February, 2020
+												%span #brand
+												%span 723 words	 	
 								%li
 									%article
-										%h1.medium  Interviewing your new manager
-										%p.meta.x-small  
-											%span 14 February, 2020
-											%span #younextjob
-											%span 723 words	 	
+										%a{:title => :"Writing", :href=> :"/writing"}
+											%h1.medium  Interviewing your new manager
+											%p.meta.x-small  
+												%span 14 February, 2020
+												%span #younextjob
+												%span 723 words	 	
 								%li
 									%article
-										%h1.medium  Running better one-to-ones
-										%p.meta.x-small  
-											%span 14 February, 2020
-											%span #beingamanager
-											%span 723 words	 	
+										%a{:title => :"Writing", :href=> :"/writing"}
+											%h1.medium  Running better one-to-ones
+											%p.meta.x-small  
+												%span 14 February, 2020
+												%span #beingamanager
+												%span 723 words	 	
 			
 				.article-list
 					.grid-container
@@ -86,39 +89,55 @@ title: Story Time
 							%ol
 								%li
 									%article
-										%h1.medium  Things fall apart
-										%p.meta.x-small   
-											%span 14 February, 2020
-											%span #beingamanager
-											%span 723 words	
+										%a{:title => :"Writing", :href=> :"/writing"}
+											%h1.medium  Things fall apart
+											%p.meta.x-small   
+												%span 14 February, 2020
+												%span #beingamanager
+												%span 723 words	
 								%li
 									%article
-										%h1.medium  Running a weekly design team meeting
-										%p.meta.x-small  
-											%span 14 February, 2020
-											%span #beingamanager
-											%span 723 words	 	
+										%a{:title => :"Writing", :href=> :"/writing"}
+											%h1.medium  Running a weekly design team meeting
+											%p.meta.x-small  
+												%span 14 February, 2020
+												%span #beingamanager
+												%span 723 words	 	
 								%li
 									%article
-										%h1.medium  Developing new managers
-										%p.meta.x-small 
-											%span 14 February, 2020
-											%span #beingamanager
-											%span 723 words	 	
+										%a{:title => :"Writing", :href=> :"/writing"}
+											%h1.medium  Developing new managers
+											%p.meta.x-small 
+												%span 14 February, 2020
+												%span #beingamanager
+												%span 723 words	 	
 								%li
 									%article
-										%h1.medium  Building a design system for a fractured team
-										%p.meta.x-small 
-											%span 14 February, 2020
-											%span #designops
-											%span 723 words	 	
+										%a{:title => :"Writing", :href=> :"/writing"}
+											%h1.medium  Building a design system for a fractured team
+											%p.meta.x-small 
+												%span 14 February, 2020
+												%span #designops
+												%span 723 words	 	
 								%li
 									%article
-										%h1.medium Ice-breakers actually work, try these ones
-										%p.meta.x-small 
-											%span 14 February, 2020
-											%span #beingamanager
-											%span 723 words	 	
+										%a{:title => :"Writing", :href=> :"/writing"}
+											%h1.medium Ice-breakers actually work, try these ones
+											%p.meta.x-small 
+												%span 14 February, 2020
+												%span #beingamanager
+												%span 723 words	 	
 		
 		%footer
-			footer
+			%nav.site-section.global-nav
+				.grid-container
+					.g-s-2
+						%a.logo{:title => :"Profile", :href=> :"/profile"} Gearoid O'Rourke
+					.g-s-1
+						%a{:title => :"Profile", :href=> :"/profile"} Profile
+					.g-s-1
+						%a{:title => :"Writing", :href=> :"/writing"} Writing
+					.g-s-7
+						%a{:title => :"Events", :href=> :"/events"} Events
+					.g-s-1
+						%p.meta.x-small © 2013—{{site.time | date: "%Y"}}
