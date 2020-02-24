@@ -1,0 +1,47 @@
+---
+layout: default
+---
+%main
+	%article.site-section.post
+		.grid-container
+			.g-s-8.offset-2
+				%h1.large.headline {{page.headline}}
+
+		
+
+		== {% case {{page.standfirst}} %}
+		== {% when true %}
+		.grid-container
+			.g-s-2
+				.meta-data
+					%span.small.sidecar.date {{page.date | date: "%d %B, %Y"}}
+					%span.small.sidecar.words {{ page.content | number_of_words | append: " words" }}
+					
+			.g-s-8
+				%p.standfirst.large 
+					{{page.standfirst_text}}
+		.grid-container
+			.g-s-2
+			.g-s-6
+				{{ content }}
+		== {% else %}
+		.grid-container
+			.g-s-2
+				.meta-data
+					%img{:src => "/images/me.png", :style => "width:66%;"}
+					%br
+					%br
+					%span.small.sidecar.date {{page.date | date: "%d %B, %Y"}}
+					%span.small.sidecar.words {{ page.content | number_of_words | append: " words" }}
+			.g-s-6
+				{{ content }}
+		==  {% endcase %}
+			
+	<div class="PageNavigation">
+	{% if page.previous.url %}
+	<a class="prev" href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a>
+	{% endif %}
+	{% if page.next.url %}
+	<a class="next" href="{{page.next.url}}">{{page.next.title}} &raquo;</a>
+	{% endif %}
+	</div>

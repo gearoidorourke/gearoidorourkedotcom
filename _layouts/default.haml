@@ -1,0 +1,17 @@
+---
+
+---
+%html
+	%head
+		%link{:rel => :stylesheet, :type => :"text/css", :href => "/style.css"}
+	
+	
+	{% capture theme %}{{page.theme | default: "regular"}}{% endcapture %}
+	
+	%body{:class => :"{{theme}}"}
+		
+		{% haml header.haml %}
+		
+		{{content}}
+		
+		{% haml footer.haml %}

@@ -4,9 +4,10 @@
 // MIXINS
 
 // Type
-@mixin 	sans 		{font-family: "National 2 Test", sans-serif;}
+@mixin 	sans 		{font-family: "Söhne Test", sans-serif;}
 @mixin 	serif 		{font-family: "Tiempos Text Test", serif;}
 @mixin 	headline 	{font-family: "Tiempos Headline Test", serif;}
+@mixin	super_headline {font-family: "Tiempos Fine Test", serif;}
 
 // Colors
 $d-100: 		hsla(234, 44%, 8%,  1.0);
@@ -16,9 +17,14 @@ $d-30:  		hsla(234, 44%, 8%,  0.3);
 $d-10:  		hsla(234, 44%, 8%,  0.1);
 $link:  		hsla(215, 79%, 52%, 1.0);
 $highlight:  	hsla(58, 100%, 50%, 1.0);
+$l-100:			hsla(36, 20%, 98%,  1.0);
+$l-90:			hsla(36, 20%, 98%,  0.9);
+$l-60:			hsla(36, 20%, 98%,  0.6);
+$l-30:			hsla(36, 20%, 98%,  0.3);
+$l-10:			hsla(36, 20%, 98%,  0.1);
 
 // Backgrounds
-@mixin 	tinted 		{background: hsla(36, 20, 98, 1);}
+@mixin 	tinted 		{background: hsla(234, 44%, 8%,  0.03);}
 @mixin 	dark 		{background: hsla(0, 0, 7, 1);}
 
 
@@ -39,11 +45,12 @@ h1, h2, h3, h4, h5, h6, p, ul, ol {
 	margin: 0;
 	padding: 0;	
 	font-weight: 400;
+	
 }
 
 h1 {
 	@include headline;
-		font-weight: 600;
+		font-weight: 500;
 }
 
 .x-small {
@@ -60,14 +67,30 @@ h1 {
 }
 
 .large {
-	font-size: 1.5rem;
+	font-size: 1.75rem;
 	line-height: 2rem;
 }
 
 .x-large {
-	font-size: 1.75rem;
-	line-height: 2rem;
+	font-size: 2.25rem;
+	line-height: 2.75rem;
 }
+
+.huge {
+	font-size: 8rem;
+	text-align: center;
+	line-height: 1.1;
+	font-style: italic;
+	font-weight: 400!important;
+	
+}
+
+.sans {
+		@include sans;
+		font-style: normal;
+		font-weight: 500!important;
+		color: $d-10!important;
+	}
 
 .allcaps {
 	text-transform: uppercase;
@@ -83,7 +106,6 @@ h1 {
 	color: $d-30;
 	@include sans;
 }
-
 
 
 
@@ -152,7 +174,8 @@ $sizes: 1,2,3,4,5,6,7,8,9,10,11,12;
 	padding: 3rem 3rem 1rem 3rem;
 	
 	h1 {
-		
+		font-weight: 500;
+		color: $d-100;	
 	}
 }
 
@@ -171,6 +194,10 @@ $sizes: 1,2,3,4,5,6,7,8,9,10,11,12;
 	.logo {
 		color: $d-60;
 	}
+}
+
+.global-footer {
+	border-top: 1px solid $d-10;
 }
 
 // Career list
@@ -216,7 +243,7 @@ $sizes: 1,2,3,4,5,6,7,8,9,10,11,12;
 	}
 	h1 {
 		@include headline;
-		font-weight: 600;
+		font-weight: 500;
 		margin-bottom: 0.25rem;
 	}
 	.meta {
@@ -262,16 +289,14 @@ $sizes: 1,2,3,4,5,6,7,8,9,10,11,12;
 	
 	h1{
 		@include headline;	
-		
-		
 	}
 	
 	
 	h2, h3, h4, h5 {
 		padding: 1rem 0 1rem 0;
-		color: $d-100;
 		@include serif;
 		font-weight: 500;
+		color: $d-100;
 	}
 	
 	h2 {
@@ -299,6 +324,10 @@ $sizes: 1,2,3,4,5,6,7,8,9,10,11,12;
 		font-size: 1.125rem;
 	}
 	
+	img {
+		width: 100%;
+	}
+	
 	code {
 		background: $d-10;
 		padding: 0.125rem 0.5rem 0.25rem 0.5rem;
@@ -310,23 +339,24 @@ $sizes: 1,2,3,4,5,6,7,8,9,10,11,12;
 		border-left: 2px solid $d-10;
 		padding: 0 1rem 0.25rem 1.5rem;
 		margin: 0 0 2rem 0;
-		@include sans;
+		@include serif;
 		
 		
 		p {
 			margin: 0;
-			font-size: 1.25rem;
+			font-size: 1.125rem;
 			color: $d-100;
 			font-weight: 300;
+			font-style: italic;
 		}
 	}
 	
 	ul, ol {
-		margin-left: 1rem;
+		margin-left: 3rem;
 		text-indent: 0.5rem;
 	}
 	ul {
-		margin-left: 0.75rem;
+		
 	}
 	hr {
 		border: none;
@@ -340,7 +370,7 @@ $sizes: 1,2,3,4,5,6,7,8,9,10,11,12;
 	
 	em {
 		background: $highlight;
-		font-style: normal;
+		font-style: inherit;
 		font-weight: 300;
 		padding: 0 .25rem;
 		display: inline-block;
@@ -351,6 +381,7 @@ $sizes: 1,2,3,4,5,6,7,8,9,10,11,12;
 		font-size: 0.625rem;
 		@include sans;
 		font-weight: 400;
+		f
 		
 		a {
 				color: $link
@@ -360,7 +391,93 @@ $sizes: 1,2,3,4,5,6,7,8,9,10,11,12;
 }
 
 
+// THEMES
+body.dark {
+	background: $d-100;
+	
+	h1, h2, h3, h4, h5, h6, p, ol, ul, blockquote{
+		color: $l-90;
+	
+	}
+	
+	.sidecar {
+		color: $l-60;
+	}
+	
+	.post {
+		color: $l-90;
+		
+		h1{
+			color: $l-100;	
+		}
+		
+		
+		h2, h3, h4, h5 {
+			color: $l-90;	
+		}
+		
+		h2 {}
+		h3 {}
+		h4 {}
+		h5 {
+			color: $l-60;
+		}
+		p {
+			color: $l-90;
+		}
+		p, ul, ol {}
+		code {
+			background: $l-10;
+			color: $l-90;
+		}
+		
+		blockquote {
+			border-left: 2px solid $l-30;
+			
+			p {
+				color: $l-60;	
+			}
+		}
+		
+		ul, ol {
+			margin-left: 1rem;
+			text-indent: 0.5rem;
+		}
+		ul {
+			margin-left: 0.75rem;
+		}
+		hr {
+			border: none;
+			height: 1px;
+			background: $d-10;
+			margin: 4rem auto 3rem auto;
+			display: block;
+			max-width: 10rem;
+			
+		}
+		
+		em {
+			background: $highlight;
+			font-style: normal;
+			font-weight: 300;
+			padding: 0 .25rem;
+			display: inline-block;
+		}
+		.foot-ref {
+			vertical-align: super;
+			line-height: 0;
+			font-size: 0.625rem;
+			@include sans;
+			font-weight: 400;
+			
+			a {
+					color: $link
+			}
+		}
+		
+	}
 
+}
 
 
 
