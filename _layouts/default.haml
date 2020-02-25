@@ -1,12 +1,14 @@
 ---
 
 ---
+{% capture theme %}{{page.theme | default: "regular"}}{% endcapture %}
+
+
 %html
 	%head
 		%link{:rel => :stylesheet, :type => :"text/css", :href => "/style.css"}
 	
 	
-	{% capture theme %}{{page.theme | default: "regular"}}{% endcapture %}
 	
 	%body{:class => :"{{theme}}"}
 		

@@ -7,26 +7,29 @@ layout: default
 	.grid-container
 		.g-s-8.offset-2
 			%h1.x-large {{page.title}}
+			%p I mainly write about design hiring, being a design maanger and design at startups.
 
 %main
 	%section.site-section
-		
-	
+		== {% assign postsByYear = site.posts | group_by_exp:"post", "post.date | date: '%Y'" %}
+
+		== {% for year in postsByYear %}
 		.article-list
+			
 			.grid-container
 				.g-s-2		
-					%h2.small.sidecar Recent posts
+					%h2.small.sidecar {{ year.name }}
 				.g-s-8
 					%ol
 						
-						== {% for post in site.posts %}
+						== {% for post in year.items %}
 						%li
 							%article
 								%a{:title => :"{{ post.title }}", :href=> :"{{ post.url }}"}
-									%h1.medium  {{ post.headline }}
+									%h1.small  {{ post.headline }}
 									%p.meta.x-small   
-										%span {{post.date | date: "%d %B, %Y"}}	
-										%span {{post.tags[0] | prepend: "#"}}
+										%span {{post.date | date: "%d %B"}}	
 										%span {{ post.content | number_of_words | append: " words" }}
 										
 						== {% endfor %}
+		== {% endfor %}

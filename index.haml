@@ -5,13 +5,12 @@ layout: default
 						
 %section.site-section.introduction 
 	.grid-container
+		
 		.g-s-8.offset-2
 			
 			
-			%h1.x-large
-				Hello there, I’m Gearoid &mdash; an Irish designer
-				based in Brooklyn, New York. During the week I work as a Design Manager at Spotify, on 
-				our free music service. Evenings and weekends, I hike, write and drink wine.   
+			%h1.xx-large
+				Hello there, I’m Gearóid &mdash; a designer from Ireland, currently travelling the world.
 		
 %section.site-section#career 
 	.grid-container	
@@ -23,18 +22,16 @@ layout: default
 				%li.year 2016 
 				%li.year 2015 
 				%li.year 2013 
-				%li.year &nbsp;
 		.g-s-3
 			%ol.career-list
 				%li.meta Something new
 				%li VP Design, AngelList
 				%li Global Head of Design, Helpling
 				%li Head of Growth & Design, Hassle.com	
-				%li &nbsp;
-				%a Read more about me
-		.g-s-2
-		.g-s-2
-			%img{:src => "/images/me.png", :width => "180px"}
+				
+		.g-s-3
+		
+			
 			
 		
 %main
@@ -42,6 +39,7 @@ layout: default
 		.grid-container
 			.g-s-8.offset-2
 				%h1.large.list-push Writing
+				
 		
 		.article-list
 			.grid-container
@@ -54,7 +52,7 @@ layout: default
 						%li
 							%article
 								%a{:title => :"{{ post.title }}", :href=> :"{{ post.url }}"}
-									%h1.medium  {{ post.title }}
+									%h1.small  {{ post.title }}
 									%p.meta.x-small   
 										%span {{post.date | date: "%d %B, %Y"}}	
 										%span {{post.tags[0] | prepend: "#"}}
@@ -72,7 +70,7 @@ layout: default
 						%li
 							%article
 								%a{:title => :"{{ post.title }}", :href=> :"{{ post.url }}"}
-									%h1.medium  {{ post.title }}
+									%h1.small  {{ post.title }}
 									%p.meta.x-small   
 										%span {{post.date | date: "%d %B, %Y"}}	
 										%span {{post.tags[0] | prepend: "#"}}
