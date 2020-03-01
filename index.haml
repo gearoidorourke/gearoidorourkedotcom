@@ -4,18 +4,25 @@ layout: default
 ---
 						
 %section.site-section.introduction 
+	
+
 	.grid-container
+		.g-s-2
 		
-		.g-s-8.offset-2
+		
+		.g-s-6
 			
 			
 			%h1.xx-large
-				Hello there, I’m Gearóid &mdash; a designer from Ireland, currently travelling the world.
+				Hello there, I’m <a><i>Gearóid</i></a> <br/>&mdash; a designer from Ireland, currently travelling the world
+		.g-s-2
+			%img{:src => "/images/me/avatar.png", :width => "80%"}
 		
 %section.site-section#career 
 	.grid-container	
 		.g-s-2
 			%h2.small.sidecar Recent career
+			
 		.g-s-1
 			%ol.career-list
 				%li.year 2020 					
@@ -25,55 +32,72 @@ layout: default
 		.g-s-3
 			%ol.career-list
 				%li.meta Something new
-				%li VP Design, AngelList
-				%li Global Head of Design, Helpling
-				%li Head of Growth & Design, Hassle.com	
+				%li VP Product Design <span class="meta">@</span> AngelList
+				%li Global Head of Design <span class="meta">@</span> Helpling
+				%li Head of Growth & Design <span class="meta">@</span> Hassle	
 				
 		.g-s-3
-		
+			
+	.list-push		
+	.grid-container
+		.g-s-2
+		.g-s-4		
+			%a{:title => :"More about Gearoid", :href=> :"/about"} FInd out more about me <span class="mono">&rarr;</span>
 			
 			
 		
 %main
 	%section.site-section.tinted 
-		.grid-container
-			.g-s-8.offset-2
-				%h1.large.list-push Writing
+		.section-title
+			.grid-container
+				.g-s-2
+				.g-s-6
+					%h1.large Writing
+			.grid-container
+				.g-s-2
+				.g-s-8
+					%p.medium 
+						I write mainly about my personal experiences as a design manager, building design teams and the practice of design at startups. Sometimes, I write about hiking.
+					%p
+						%a{:title => :"All articles", :href=> :"/writing"} View a full archive of my writing <span class="mono">&rarr;</span>
+				.g-s-2
+					
+		
+		.list-push
 				
 		
-		.article-list
+		.article-list.popular
 			.grid-container
 				.g-s-2					
-					%h2.small.sidecar Popular posts
+					%h2.small.sidecar Popular articles
 				.g-s-8
 					%ol
-						== {% assign popular_posts = site.posts | where: "popular", "true" %}
-						== {% for post in popular_posts %}
+						== {% assign popular_posts = site.posts  | where: "popular", "true"  %}
+						== {% for post in popular_posts limit:3 %}
 						%li
 							%article
-								%a{:title => :"{{ post.title }}", :href=> :"{{ post.url }}"}
-									%h1.small  {{ post.title }}
-									%p.meta.x-small   
+								%a{:title => :"{{ post.headline }}", :href=> :"{{ post.url }}"}
+									%h1.medium  {{ post.headline }} <span class="mono">&rarr;</span>
+									%p.meta.small   
 										%span {{post.date | date: "%d %B, %Y"}}	
-										%span {{post.tags[0] | prepend: "#"}}
+										
 										%span {{ post.content | number_of_words | append: " words" }}
 						== {% endfor %}
 	
 		.article-list
 			.grid-container
 				.g-s-2		
-					%h2.small.sidecar Recent posts
+					%h2.small.sidecar Recent articles
 				.g-s-8
 					%ol
 						
-						== {% for post in site.posts %}
+						== {% for post in site.posts limit:5 %}
 						%li
 							%article
-								%a{:title => :"{{ post.title }}", :href=> :"{{ post.url }}"}
-									%h1.small  {{ post.title }}
-									%p.meta.x-small   
+								%a{:title => :"{{ post.headline }}", :href=> :"{{ post.url }}"}
+									%h1.medium  {{ post.headline }} <span class="mono">&rarr;</span>
+									%p.meta.small   
 										%span {{post.date | date: "%d %B, %Y"}}	
-										%span {{post.tags[0] | prepend: "#"}}
 										%span {{ post.content | number_of_words | append: " words" }}
 						== {% endfor %}
 

@@ -1,5 +1,5 @@
 ---
-categories: [writing]
+categories: [design hiring]
 
 tags: [TAG]
 layout: post

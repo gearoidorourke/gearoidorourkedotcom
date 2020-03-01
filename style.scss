@@ -12,6 +12,27 @@
    font-style: normal;
 }
 
+
+@font-face {
+   font-family: 'soehne';
+   src: url('../fonts/soehne/sw-kraftig.eot');
+   src: url('../fonts/soehne/sw-kraftig.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/soehne/sw-kraftig.woff2') format('woff2'),
+        url('../fonts/soehne/sw-kraftig.woff') format('woff');
+   font-weight: 500;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'soehne';
+   src: url('../fonts/soehne/sw-kraftig-kursiv.eot');
+   src: url('../fonts/soehne/sw-kraftig-kursiv.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/soehne/sw-kraftig-kursiv.woff2') format('woff2'),
+        url('../fonts/soehne/sw-kraftig-kursiv.woff') format('woff');
+   font-weight: 500;
+   font-style: italic;
+}
+
 @font-face {
    font-family: 'tiempos-h';
    src: url('../fonts/tiempos-h/thw-medium.eot');
@@ -53,14 +74,74 @@
 } 
 
 
+@font-face {
+   font-family: 'tiempos-t';
+   src: url('../fonts/tiempos-t/ttw-semibold.eot');
+   src: url('../fonts/tiempos-t/ttw-semibold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/tiempos-t/ttw-semibold.woff2') format('woff2'),
+        url('../fonts/tiempos-t/ttw-semibold.woff') format('woff');
+   font-weight: 600;
+   font-style: normal;
+} 
+
+@font-face {
+   font-family: 'tiempos-t';
+   src: url('../fonts/tiempos-t/ttw-semibold-italic.eot');
+   src: url('../fonts/tiempos-t/ttw-semibold-italic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/tiempos-t/ttw-semibold-italic.woff2') format('woff2'),
+        url('../fonts/tiempos-t/ttw-semibold-italic.woff') format('woff');
+   font-weight: 600;
+   font-style: italic;
+}
+
+@font-face {
+   font-family: 'pitch';
+   src: url('../fonts/pitch/pw-medium.eot');
+   src: url('../fonts/pitch/pw-medium.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/pitch/pw-medium.woff2') format('woff2'),
+        url('../fonts/pitch/pw-medium.woff') format('woff');
+   font-weight: 500;
+   font-style: normal;
+} 
+
+@font-face {
+   font-family: 'pitch';
+   src: url('../fonts/pitch/pw-mediumItalic.eot');
+   src: url('../fonts/pitch/pw-mediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/pitch/pw-mediumItalic.woff2') format('woff2'),
+        url('../fonts/pitch/pw-mediumItalic.woff') format('woff');
+   font-weight: 500;
+   font-style: italic;
+} 
+
+@font-face {
+   font-family: 'pitch';
+   src: url('../fonts/pitch/pw-semibold.eot');
+   src: url('../fonts/pitch/pw-semibold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/pitch/pw-semibold.woff2') format('woff2'),
+        url('../fonts/pitch/pw-semibold.woff') format('woff');
+   font-weight: 600;
+   font-style: normal;
+} 
+
+@font-face {
+   font-family: 'pitch';
+   src: url('../fonts/pitch/pw-semiboldItalic.eot');
+   src: url('../fonts/pitch/pw-semiboldItalic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/pitch/pw-semiboldItalic.woff2') format('woff2'),
+        url('../fonts/pitch/pw-semiboldItalic.woff') format('woff');
+   font-weight: 600;
+   font-style: italic;
+} 
+
 // MIXINS
 
 // Type
-@mixin 	sans 		{	font-family: "soehne", sans-serif;
-						font-feature-settings: "onum", "ss02"; 
-					}
+@mixin 	sans 		{font-family: "soehne", sans-serif;
+					font-feature-settings: "onum", "ss02";}
 @mixin 	serif 		{font-family: "tiempos-t", serif;}
 @mixin 	headline 	{font-family: "tiempos-h", serif;}
+@mixin 	mono 		{font-family: "pitch", monospace;}
 
 // Colors
 $d-100: 		hsla(234, 44%, 8%,  1.0);
@@ -68,6 +149,7 @@ $d-90:  		hsla(234, 44%, 8%,  0.9);
 $d-60:  		hsla(234, 44%, 8%,  0.6);
 $d-30:  		hsla(234, 44%, 8%,  0.3);
 $d-10:  		hsla(234, 44%, 8%,  0.1);
+$d-05:  		hsla(234, 44%, 8%,  0.05);
 $link:  		hsla(220, 100%, 50%, 1.0);
 $highlight:  	hsla(58, 100%, 50%, 1.0);
 $l-100:			hsla(36, 20%, 98%,  1.0);
@@ -77,14 +159,16 @@ $l-30:			hsla(36, 20%, 98%,  0.3);
 $l-10:			hsla(36, 20%, 98%,  0.1);
 
 // Backgrounds
-@mixin 	tinted 		{background: hsla(234, 44%, 8%,  0.03);}
+@mixin 	tinted 		{background: hsla(234, 44%, 8%,  0.02);}
 @mixin 	dark 		{background: hsla(0, 0, 7, 1);}
 
 
 // ———————————————————
 // TYPE
 // ———————————————————
-
+html {
+	scroll-behavior: smooth;
+}
 body {
 	@include sans;
 	color: $d-90;
@@ -116,7 +200,7 @@ h1 {
 }
 
 .medium {
-	font-size: 1.125rem;
+	font-size: 1.25rem;
 	line-height: 2rem;
 }
 
@@ -131,16 +215,18 @@ h1 {
 }
 
 .xx-large {
-	font-size: 2.75rem;
+	font-size: 3rem;
 	line-height: 3.25rem;
 }
 
 .huge {
-	font-size: 8rem;
-	text-align: center;
-	line-height: 1.1;
+	@include headline;
+	font-size: 9rem;
+	line-height: 7rem;
 	font-style: italic;
 	font-weight: 400!important;
+	padding-bottom: 3rem;
+	color: $d-100;
 	
 }
 
@@ -148,7 +234,6 @@ h1 {
 		@include sans;
 		font-style: normal;
 		font-weight: 500!important;
-		color: $d-10!important;
 	}
 
 .allcaps {
@@ -158,7 +243,10 @@ h1 {
 }
 
 .sidecar {
-	color: $d-60;	
+	color: $d-60;
+	&.ll {
+			margin-top: 9px;
+		}	
 }
 
 .meta {
@@ -166,6 +254,20 @@ h1 {
 	@include sans;
 }
 
+.section-title {
+	@include sans;
+	font-weight: 500;
+}
+
+.flip {
+	transform: scaleY(-1);
+	display: inline-block;
+}
+
+.mono {
+	@include mono;
+	font-weight: 400;
+}
 
 
 // LINKS
@@ -193,6 +295,10 @@ body, html {
 // 	background: red;
 }
 
+.block {
+	padding: 0 3rem 3rem 3rem;
+}
+
 .tinted {
 	@include tinted;
 }
@@ -205,7 +311,7 @@ body, html {
 .grid-container {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-	grid-gap: 1.5rem;
+	grid-gap: 2rem;
 // 	max-width: 1280px;
 	margin: 0 auto;
 // 	background: pink;
@@ -238,6 +344,18 @@ $sizes: 1,2,3,4,5,6,7,8,9,10,11,12;
 	}
 }
 
+
+// Section title
+.section-title {
+
+	h1 {
+		@include sans;
+	}
+	p {
+		margin-top: 2rem;
+	}
+}
+
 // global-nav
 
 .global-nav {
@@ -252,11 +370,12 @@ $sizes: 1,2,3,4,5,6,7,8,9,10,11,12;
 	
 	.logo {
 		color: $d-90;
+		font-weight: 500;
 	}
 }
 
 .global-footer {
-	border-top: 1px solid $d-10;
+// 	border-top: 1px solid $d-10;
 }
 
 // Career list
@@ -265,6 +384,7 @@ $sizes: 1,2,3,4,5,6,7,8,9,10,11,12;
 
 	li {
 		margin-bottom: 0.125rem;
+		padding: 0.125rem 0;
 	}
 	
 	.year {
@@ -275,14 +395,23 @@ $sizes: 1,2,3,4,5,6,7,8,9,10,11,12;
 
 // Article list
 .article-list {
-	margin-bottom: 7rem;
+	margin-top: 7.5rem;
+	&.popular {
+		margin-top: 0;
+	}
+	&:first-of-type {
+		margin-top: 0;
+	}
 	a {
 		color: inherit;
 		display: block;
-		padding: 1.25rem 0;
+		margin: 1.5rem 0;
 		&:hover {
 			h1 {
 				color: $link;
+				span {
+					display: block;
+				}
 			}
 		
 		}
@@ -303,8 +432,17 @@ $sizes: 1,2,3,4,5,6,7,8,9,10,11,12;
 	}
 	h1 {
 		@include serif;
-		font-weight: 400;
-		margin-bottom: 0.25rem;
+		font-weight: 600;
+		letter-spacing: -0.25px;
+		position: relative;
+		span {
+			display: none;
+			position: absolute;
+			right: 1rem;
+			top: 0;
+			font-size: 1.75rem;
+			
+		}
 
 	}
 	.meta {
@@ -318,6 +456,97 @@ $sizes: 1,2,3,4,5,6,7,8,9,10,11,12;
 .list-push {
 	padding-bottom: 5rem;
 }
+
+
+// Lined list
+.lined-list {
+	border-bottom: 1px solid $d-10;
+	margin: 0 0 2rem 0;
+	list-style: none;
+	li {
+		border-top: 1px solid $d-10;
+		padding: 0.5rem 0;
+	}
+	
+}
+
+.incorrect-list {
+	border-bottom: none;
+	p {
+		position: relative;
+		padding-left: 2rem;
+	}
+	li {
+		border-bottom: 1px solid $d-10;
+		border-top: none;
+	}
+	li:nth-of-type(1),
+	li:nth-of-type(2),
+	li:nth-of-type(3) {
+		border-top: 1px solid $d-10;
+	}
+	span {
+		position: absolute;
+		left: 0;
+		top: 0;
+		font-size: 150%;
+		font-weight: 600;
+		color: #E4001C;
+	}
+	
+	.grid-container {
+		grid-row-gap: 0;
+	}
+	
+	
+}
+
+// Jump links
+.jump-links {
+	border-left: 1px solid $d-10;
+	list-style: none;
+	margin: 0;
+	padding: 0 0 0 2rem;
+}
+
+
+// AUdio
+audio {
+	width: 100%;
+	display: block;
+	margin-left: -0.5rem;
+}
+
+.paginator {
+// 	border-top: 1px solid $d-10;
+	padding: 0 3rem 5rem 3rem;
+	
+	a {
+	
+		@include serif;
+		font-weight: 600;
+		letter-spacing: -0.5px;
+		color: $d-100;
+		display: block;
+		padding: 0.5rem 0 0 0;
+	}
+	
+	p {
+		line-height: 1;
+		color: $d-60;
+		font-weight: 400;
+	}	
+}
+.prev {
+	text-align: left;
+}
+.next, .prev {
+	border: 1px solid $d-10;
+	border-radius: 4px;
+	padding: 2rem;
+}
+
+
 
 // Article
 .post {
@@ -356,16 +585,17 @@ $sizes: 1,2,3,4,5,6,7,8,9,10,11,12;
 	h2, h3, h4, h5 {
 		padding: 1rem 0 1rem 0;
 		@include serif;
-		font-weight: 500;
+		font-weight: 600;
 		color: $d-100;
 	}
 	
 	h2 {
-		@extend .medium;
+		@extend .large;
 		padding-bottom: 1.5rem;
+		letter-spacing: -0.5px;
 	}
 	h3 {
-		@extend .small;
+		@extend .medium;
 	}
 	h4 {
 		@include sans;
@@ -378,6 +608,7 @@ $sizes: 1,2,3,4,5,6,7,8,9,10,11,12;
 		@extend .x-small;
 		@extend .allcaps;
 		font-weight: 500;
+		color: $d-60
 	}
 	p {}
 	p, ul, ol {
@@ -397,16 +628,26 @@ $sizes: 1,2,3,4,5,6,7,8,9,10,11,12;
 	}
 	
 	code {
+		@include mono;
 		background: $d-10;
 		padding: 0.125rem 0.5rem 0.25rem 0.5rem;
-		color: $d-90;
+		color: $d-100;
 		border-radius: 4px;
+		font-weight: 500;
+	}
+	
+	pre code {
+		display: block;
+		padding: 2rem;
+		background: $d-90;
+		color: #eeeeee;
 	}
 	
 	blockquote {
-		border-left: 2px solid $d-10;
-		padding: 0 1rem 0.25rem 1.5rem;
+		border-left: 3px solid $d-10;
+		padding: 0.25rem 1.5rem 0.5rem 1.5rem;
 		margin: 0 0 2rem 0;
+		@include mono;
 		
 		
 		
@@ -414,11 +655,14 @@ $sizes: 1,2,3,4,5,6,7,8,9,10,11,12;
 			margin: 0;
 			font-size: 1.125rem;
 			color: $d-100;
-			@include serif;
-			font-weight: 400;
-			font-style: italic;
+			
+			font-weight: 500;
+// 			font-style: italic;
+			line-height: 1.625rem;
 		}
 	}
+	
+
 	
 	ul, ol {
 		margin-left: 3rem;
@@ -437,10 +681,14 @@ $sizes: 1,2,3,4,5,6,7,8,9,10,11,12;
 		
 	}
 	
+	b {
+		font-weight: 600;
+	}
+	
 	em {
 		background: $highlight;
 		font-style: inherit;
-		font-weight: 300;
+		font-weight: 400;
 		padding: 0 .25rem;
 		display: inline-block;
 	}
@@ -461,7 +709,8 @@ $sizes: 1,2,3,4,5,6,7,8,9,10,11,12;
 
 
 // THEMES
-body.dark {
+body.dark,
+section.dark {
 	background: $d-100;
 	
 	h1, h2, h3, h4, h5, h6, p, ol, ul, blockquote{
@@ -469,9 +718,28 @@ body.dark {
 	
 	}
 	
-	.sidecar {
-		color: $l-60;
+	.introducton h1 {
+		color: $l-100;
 	}
+	
+	.sidecar {
+		color: $l-30;
+		
+	}
+	
+	.global-nav {
+			
+			a {
+				color: $l-30;
+				&:hover {
+					color: $link;
+				}
+			}
+			
+			.logo {
+				color: $l-90;
+			}
+		}	
 	
 	.post {
 		color: $l-90;
@@ -498,6 +766,7 @@ body.dark {
 		code {
 			background: $l-10;
 			color: $l-90;
+			font-weight: 600;
 		}
 		
 		blockquote {
@@ -532,18 +801,7 @@ body.dark {
 			padding: 0 .25rem;
 			display: inline-block;
 		}
-		.foot-ref {
-			vertical-align: super;
-			line-height: 0;
-			font-size: 0.625rem;
-			@include sans;
-			font-weight: 400;
 			
-			a {
-					color: $link
-			}
-		}
-		
 	}
 
 }

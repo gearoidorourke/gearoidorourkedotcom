@@ -1,19 +1,84 @@
 ---
 title: Writing 
 layout: default
----
 
-%section.site-section.introduction 
-	.grid-container
-		.g-s-8.offset-2
-			%h1.huge.sans
-				Gearóid
-			%h1.huge
-				“gah&mdash;road”
-				
-%section.site-section 
+---
+%section.site-section
+	.section-title
+		.grid-container
+			.g-s-2
+			.g-s-6
+				%h1.large How to say “Gearóid” &mdash; it’s easier than it looks
+		.grid-container
+			.g-s-2
+			.g-s-8
+				%p.medium 
+					Maybe you’ve just met someone called Gearóid, or maybe you’re just about to. It may look like a bit of a tongue-twister, but this uncommon Irish name is easy to say, once you know how. The real trick is to forget how it’s written, and focus on how it sounds.
+			
+			.g-s-2	
+	
+
+%section.block				
 	.grid-container
 		.g-s-2
-			%h2.small.sidecar Career highlights
+			%h2.small.sidecar Listen to it
+		.g-s-4
+			<audio controls><source src="sound.ogg" type="audio/ogg" ><source src="sound.mp3" type="audio/mp3" ></audio>
+
+%section.block	
+	.grid-container
+		.g-s-2
+			%h2.small.sidecar Say it like this
+		.g-s-8
+			%h1.huge.sans
+				gah–road
+		
+
+					
+%section.block	
+	.grid-container
+		.g-s-2
+			%h2.small.sidecar.ll Try not to say it like this
+		.g-s-8
+			
+			%ol.lined-list.incorrect-list
+				.grid-container
+				
+					== {% for name in site.data.names %}
+
+					%li.g-s-4
+						%p 
+							{{name.name}}
+							%span.mono ×
+		  
+					== {% endfor %}
+					
+%section.site-section.dark	
+	.grid-container	
+		.g-s-2
+			%h1.large{:style => :"margin-top:0.75rem;"} Frequent Questions
 		.g-s-6
-			hello
+			.post
+				
+				:markdown				
+					#### Where does the name ‘Gearóid’ come from?
+					
+					There's a simple answer and a not-so-simple answer. The simple answer is that it was my Dad’s name, and my Grandad’s name. So calling me ‘Gearóid’ just followed the family tradition.
+					The not-so-simple answer is that while, yes, it was the name of my fore fathers, both my Dad and Grandad changed their names to not be ‘Gearóid’.
+					
+					I guess the real answer is that I was given the name becacuse it’s a family tradition and I kept the name because I’m more stubborn than those that went before me.
+					
+					#### What does the name ‘Gearóid’ mean?
+					
+					There's a simple answer and a not-so-simple answer. The simple answer is that it was my Dad’s name, and my Grandad’s name. So calling me ‘Gearóid’ just followed the family tradition.
+					The not-so-simple answer is that while, yes, it was the name of my fore fathers, both my Dad and Grandad changed their names to not be ‘Gearóid’.
+					
+					I guess the real answer is that I was given the name becacuse it’s a family tradition and I kept the name because I’m more stubborn than those that went before me.
+					
+					#### Why are you called Gearóid?
+					
+					There's a simple answer and a not-so-simple answer. The simple answer is that it was my Dad’s name, and my Grandad’s name. So calling me ‘Gearóid’ just followed the family tradition.
+					The not-so-simple answer is that while, yes, it was the name of my fore fathers, both my Dad and Grandad changed their names to not be ‘Gearóid’.
+					
+					I guess the real answer is that I was given the name becacuse it’s a family tradition and I kept the name because I’m more stubborn than those that went before me.
+					
